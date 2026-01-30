@@ -1,0 +1,45 @@
+services:
+  cliente-service:
+    build:
+      context: .
+      args:
+        SERVICE_NAME: cliente
+      dockerfile: cliente/Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - SERVER_PORT=8080
+    networks:
+      - ddsi-network
+
+  producto-service:
+    build:
+      context: .
+      args:
+        SERVICE_NAME: producto
+      dockerfile: producto/Dockerfile
+    ports:
+      - "8081:8081"
+    environment:
+      - SERVER_PORT=8081
+    networks:
+      - ddsi-network
+
+
+  pagos-service:
+    build:
+      context: .
+      args:
+        SERVICE_NAME: pagos
+      dockerfile: pagos/Dockerfile
+    ports:
+      - "8082:8082"
+    environment:
+      - SERVER_PORT=8082
+    networks:
+      - ddsi-network
+
+
+networks:
+  ddsi-network:
+    driver: bridge
