@@ -1,7 +1,7 @@
 # ==========================
 # Etapa 1: Build de Maven
 # ==========================
-FROM maven:3.9.6-eclipse-temurin-17 AS builder
+FROM maven:3.9.6-eclipse-temurin-21 AS builder
 WORKDIR /app
 
 # nombre del directorio físico del servicio,
@@ -19,7 +19,7 @@ RUN mvn clean package -pl ${SERVICE_NAME} -am -DskipTests
 # ==========================
 # Etapa 2: Imagen final (solo el JAR)
 # ==========================
-FROM eclipse-temurin:17-jre
+FROM eclipse-temurin:21-jre
 WORKDIR /app
 
 # nombre del directorio físico del servicio,
