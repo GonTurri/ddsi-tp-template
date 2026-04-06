@@ -26,7 +26,3 @@ Thumbs.db
 .env.*
 application-local.yml
 application-local.properties
-
-# Docker compose (no necesario en imagen)
-docker-compose.yml
-docker-compose*.yml
