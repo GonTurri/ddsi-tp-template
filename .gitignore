@@ -5,6 +5,12 @@ target/
 .kotlin
 .idea/
 
+### Logs y Temporales ###
+*.log
+*.tmp
+/logs/
+**/logs/
+
 ### IntelliJ IDEA ###
 .idea/modules.xml
 .idea/jarRepositories.xml
